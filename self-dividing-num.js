@@ -1,17 +1,20 @@
 var selfDividingNumbers = function(left, right) {
-    let selfDiv = [], result;
-    for(left; left<right; left++) {
-        for(let i = 0; i<left.toString(); i++) {
-            if(left%left.toString().charAt[i] && left.toString().charAt[i] !== 0) {
+    var selfDiv = [], result;
+    
+    for(left; left < right +1; left++) {
+        for(var i=0; i<left.toString().length; i++) {
+            if(left % left.toString().charAt(i) === 0 && left.toString().charAt(i) !== 0 ) {
                 result = true;
-            } else {
+            }
+            else {
                 result = false;
                 break;
             }
+                
         }
-        if(result == true) {
+        if(result == true)
             selfDiv.push(left);
-        }
     }
+    
     return selfDiv;
 };
